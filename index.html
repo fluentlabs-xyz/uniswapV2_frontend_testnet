@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+  <title>Trade</title>
+  <link rel="shortcut icon" type="png" href="favicon.ico">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="stylesheet" href="index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background-color:black;">
+
+<div style="min-height: 5vh"></div>
+
+<div class="container">
+  <div class="center">
+    <button class="btn buttonConnectMetamask" id=enableEthereumButton></button>
+  </div>
+</div>
+
+<div style="min-height: 5vh"> </div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white">AMM Market Order</p>
+  </div>
+</div>
+
+<!-- <div style="min-height: 5vh"> </div> -->
+
+<div class="container">
+  <div class="center">
+    <input style="width: 325px;" type="text" style="text-align:center" id="inputTokenAmount" placeholder="input amount">
+    <!-- <input style="width: 50px;" type="text" style="text-align:center" id="inputTokenName" placeholder="ETH"> -->
+    <select name="inputTokenNameDropDownMenu" id="inputTokenNameDropDownMenu">
+      <option value="ETH">ETH</option>
+      <option value="LINK">LINK</option>
+    </select>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <!-- Read only input text box. -->
+    <input readonly style="width: 325px;" type="text" style="text-align:center" id="outputTokenAmount" placeholder="output amount">
+    <!-- Read only input text box. -->
+    <input readonly style="width: 50px;" type="text" style="text-align:center" id="outputTokenName" placeholder="LINK">
+    
+    <!-- <select name="language" id="language">
+      <option value="LINK">LINK</option>
+      <option value="ETH">ETH</option>
+    </select> -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <button class="swapButton btn buttonUniswapColorTheme">Swap</button>
+  </div>
+</div>
+
+<!-- <div style="min-height: 5vh"> </div> -->
+
+<!-- <div class="container">
+  <div class="center">
+    <p style="color:white">Swap ETH for LINK</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <button class="swapEthForTokenContractEvent btn buttonUniswapColorTheme">Buy LINK</button>
+  </div>
+</div> -->
+
+<!-- <div style="min-height: 5vh"> </div> -->
+
+<!-- <div class="container">
+  <div class="center">
+    <p style="color:white">Swap LINK for ETH</p>
+    <p style="color:white">(make sure you approve enough LINK ERC-20 tokens to contract UniswapV2Router02)</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <button class="swapTokenForEthContractEvent btn buttonUniswapColorTheme">Buy ETH</button>
+  </div>
+</div> -->
+
+<!-- <div style="min-height: 5vh"> </div> -->
+
+<div class="container">
+  <div class="center">
+    <form action="html/poolOptions.html">
+      <input type="submit" class="btn buttonHighContrast" value="Pool" />
+    </form>
+  </div> 
+</div>
+  
+<div class="container">
+  <div class="center">
+    <form action="https://github.com/fluentlabs-xyz/uniswapv2_frontend_testnet">
+      <input type="submit" class="btn buttonHighContrast" value="GitHub" />
+    </form>
+  </div> 
+</div>
+
+  <!-- ethers.js library import -->
+  <!-- <script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.0/ethers.umd.min.js" type="text/javascript"></script>
+    <!-- Javascript for this page source -->
+  <script src="index.js"></script>
+
+</body>
+
+</html>

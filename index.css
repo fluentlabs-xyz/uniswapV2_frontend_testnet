@@ -1,0 +1,136 @@
+.buttonConnectMetamask {
+    background-color: #000000;
+    color: #ff7300;
+    border-style: solid;
+    border-color: #ff7300;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonConnectMetamask:hover {
+    background-color: #ff7300;
+    color: #000000;
+    border-style: solid;
+    border-color: #ff7300;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonHighContrast {
+    background-color: #000000;
+    color: #ffffff;
+    border-style: solid;
+    border-color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonHighContrast:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-style: solid;
+    border-color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonUniswapColorTheme {
+    background-color: #000000;
+    color: #f209ea;
+    border-style: solid;
+    border-color: #f209ea;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonUniswapColorTheme:hover {
+    background-color: #f209ea;
+    color: #000000;
+    border-style: solid;
+    border-color: #f209ea;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonAddLiquidityGreen {
+    background-color: #000000;
+    color: #03c019;
+    border-style: solid;
+    border-color: #03c019;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonAddLiquidityGreen:hover {
+    background-color: #03c019;
+    color: #000000;
+    border-style: solid;
+    border-color: #03c019;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonRemoveLiquidityRed {
+    background-color: #000000;
+    color: #c00303;
+    border-style: solid;
+    border-color: #c00303;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.buttonRemoveLiquidityRed:hover {
+    background-color: #c00303;
+    color: #000000;
+    border-style: solid;
+    border-color: #c00303;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.container {
+    position: relative;
+    padding: 30px;
+    /* margin-right: auto;
+    margin-left: auto; */
+    text-align: center;
+}
+  
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+  <title>Pool Create</title>
+  <link rel="shortcut icon" type="png" href="../favicon.ico">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="stylesheet" href="../index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background-color:black;">
+
+<div style="min-height: 5vh"></div>
+
+<div class="container">
+  <div class="center">
+    <button class="btn buttonConnectMetamask" id=enableEthereumButton></button>
+  </div>
+</div>
+
+<div style="min-height: 5vh"> </div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white">Create Token Pair ( UniswapV2Factory.createPair(tokenA,tokenB) )</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <input style="width: 325px;" type="text" style="text-align:center" id="addressTokenA" placeholder="input addressTokenA">
+   </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <input style="width: 325px;" type="text" style="text-align:center" id="addressTokenB" placeholder="input addressTokenB">
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <button class="changeStateInContractEvent btn buttonUniswapColorTheme">Create Pair</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white">LINK/WETH pool pair address (  UniswapV2Factory.allPairs(0) ):</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white" id="getAllPairsIndexZero"></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white">Total Pairs Created (  UniswapV2Factory.allPairsLength() ):</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <p style="color:white" id="getAllPairsLength"></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="center">
+    <form action="../index.html">
+      <input type="submit" class="btn buttonHighContrast" value="Trade" />
+    </form>
+  </div> 
+</div>  
+  
+  <!-- ethers.js library import -->
+  <!-- <script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.0/ethers.umd.min.js" type="text/javascript"></script>
+    <!-- Javascript for this page source -->
+  <script src="../javascript/poolCreate.js"></script>
+
+</body>
+
+</html>
