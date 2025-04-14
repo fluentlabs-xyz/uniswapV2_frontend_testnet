@@ -10,7 +10,7 @@ https://fluentlabs-xyz.github.io/uniswapv2_frontend_testnet/
 
 ## Uniswap V2 Fonudry Deployed Contracts And Guide
 
-https://github.com/MarcusWentz/uniswapV2_foundry_deployment
+https://github.com/fluentlabs-xyz/uniswapV2_foundry_deploy
 
 ## Node.js scripts 
 
