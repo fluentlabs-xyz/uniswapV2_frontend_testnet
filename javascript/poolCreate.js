@@ -8,13 +8,13 @@ document.getElementById("enableEthereumButton").innerHTML =  "Connect Metamask ð
 document.getElementById("getAllPairsLength").innerHTML =  "Loading..."
 document.getElementById("getAllPairsIndexZero").innerHTML =  "Loading..."
 
-const baseSepoliaChainId = 20993;
+const baseSepoliaChainId = 20994;
 
 const provider = new ethers.providers.Web3Provider(window.ethereum); //Imported ethers from index.html with "<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script>".
 
 // const signer = provider.getSigner(); //Do this when the user clicks "enableEthereumButton" which will call getAccount() to get the signer private key for the provider.  
  
-const contractAddress_JS = '0x886A2bc0507C29A3685980d3E02BE8f07A94f903'
+const contractAddress_JS = '0xCcc41c8E5BeE781FAe36Af0a801C1eA523067c6F'
 const contractABI_JS = [{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"allPairs","outputs":[{"internalType":"address","name":"pair","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"allPairsLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"tokenA","type":"address"},{"internalType":"address","name":"tokenB","type":"address"}],"name":"createPair","outputs":[{"internalType":"address","name":"pair","type":"address"}],"stateMutability":"nonpayable","type":"function"}]
 
 const contractDefined_JS = new ethers.Contract(contractAddress_JS, contractABI_JS, provider);

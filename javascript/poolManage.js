@@ -8,25 +8,25 @@ document.getElementById("enableEthereumButton").innerHTML =  "Connect Metamask ð
 document.getElementById("getPoolBalanceWETH").innerHTML =  "Loading..."
 document.getElementById("getPoolBalanceLINK").innerHTML =  "Loading..."
 
-const baseSepoliaChainId = 20993;
+const baseSepoliaChainId = 20994;
 
 const provider = new ethers.providers.Web3Provider(window.ethereum); //Imported ethers from index.html with "<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script>".
 
 // const signer = provider.getSigner(); //Do this when the user clicks "enableEthereumButton" which will call getAccount() to get the signer private key for the provider.  
  
-const contractAddress_JS = '0xE00fAe47783A593f3975A13Dec9D957A437d1118'
+const contractAddress_JS = '0x9E1D1631B5d08B9Ab5f75e560434c59235ec7AA3'
 const contractABI_JS = [{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"amountTokenDesired","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"addLiquidityETH","outputs":[{"internalType":"uint256","name":"amountToken","type":"uint256"},{"internalType":"uint256","name":"amountETH","type":"uint256"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"token","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"},{"internalType":"uint256","name":"amountTokenMin","type":"uint256"},{"internalType":"uint256","name":"amountETHMin","type":"uint256"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"removeLiquidityETH","outputs":[{"internalType":"uint256","name":"amountToken","type":"uint256"},{"internalType":"uint256","name":"amountETH","type":"uint256"}],"stateMutability":"nonpayable","type":"function"}]
 
 const contractDefined_JS = new ethers.Contract(contractAddress_JS, contractABI_JS, provider);
 
-const wethAddress = '0x74df70658b6B3Dd026e496573469070DC19eabf4'
-const linkAddress = '0x04df04092EB180Ff6E23622795B68C868bb8B7CD'
+const wethAddress = '0x3d38E57b5d23c3881AffB8BC0978d5E0bd96c1C6'
+const linkAddress = '0x9030e7aa523b19D6A9d2327d45d3A3287b3EfAE1'
 const ierc20Abi = [{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
 
 const wethContractInstance = new ethers.Contract(wethAddress, ierc20Abi, provider);
 const linkContractInstance = new ethers.Contract(linkAddress, ierc20Abi, provider);
 
-const poolPairAddressLinkWeth = "0x139ae872fbfecB4a98236E60D95E0e26fb449dEB";
+const poolPairAddressLinkWeth = "0xEDE6e663eD942dbE106654DEC175671796f1959B";
 
 getDataOnChainToLoad()
 

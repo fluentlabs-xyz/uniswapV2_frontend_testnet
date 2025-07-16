@@ -11,18 +11,18 @@ document.getElementById("outputTokenAmount").value =  "Click button 'Swap' for a
 document.getElementById("outputTokenName").value =  "LINK"
 
 
-const baseSepoliaChainId = 20993;
+const baseSepoliaChainId = 20994;
 
 const provider = new ethers.providers.Web3Provider(window.ethereum); //Imported ethers from index.html with "<script src="https://cdn.ethers.io/lib/ethers-5.6.umd.min.js" type="text/javascript"></script>".
 
 // const signer = provider.getSigner(); //Do this when the user clicks "enableEthereumButton" which will call getAccount() to get the signer private key for the provider.  
  
-const contractAddress_JS = '0xE00fAe47783A593f3975A13Dec9D957A437d1118'
+const contractAddress_JS = '0x9E1D1631B5d08B9Ab5f75e560434c59235ec7AA3'
 const contractABI_JS = [{"inputs":[],"name":"WETH","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"factory","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountsOut","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactETHForTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForETH","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"}]
 const contractDefined_JS = new ethers.Contract(contractAddress_JS, contractABI_JS, provider);
 
 // LINK token address
-const tokenERC20Address = "0x04df04092EB180Ff6E23622795B68C868bb8B7CD"
+const tokenERC20Address = "0x9030e7aa523b19D6A9d2327d45d3A3287b3EfAE1"
 const ierc20Abi = [{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
 const tokenERC20ContractInstance = new ethers.Contract(tokenERC20Address, ierc20Abi, provider);
 
