@@ -8,7 +8,7 @@ document.getElementById("enableEthereumButton").innerHTML =  "Connect Metamask ð
 // document.getElementById("getValueStateSmartContract").innerHTML =  "Loading..."
 // document.getElementById("inputTokenName").value =  "ETH"
 document.getElementById("outputTokenAmount").value =  "Click button 'Swap' for a quote"
-document.getElementById("outputTokenName").value =  "LINK"
+document.getElementById("outputTokenName").value =  "WASM"
 
 
 const baseSepoliaChainId = 20994;
@@ -22,7 +22,7 @@ const contractAddress_JS = '0x9E1D1631B5d08B9Ab5f75e560434c59235ec7AA3'
 const contractABI_JS = [{"inputs":[],"name":"WETH","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"factory","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountsOut","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactETHForTokens","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForETH","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"nonpayable","type":"function"}]
 const contractDefined_JS = new ethers.Contract(contractAddress_JS, contractABI_JS, provider);
 
-// LINK token address
+// WASM token address
 const tokenERC20Address = "0x9030e7aa523b19D6A9d2327d45d3A3287b3EfAE1"
 const ierc20Abi = [{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
 const tokenERC20ContractInstance = new ethers.Contract(tokenERC20Address, ierc20Abi, provider);
@@ -88,10 +88,10 @@ inputTokenNameDropDownMenuUpdate.addEventListener('change', function() {
   console.log('Selected token name from drop down menu:', selectedValue);
 
   if(selectedValue == "ETH"){
-    document.getElementById("outputTokenName").value =  "LINK"
+    document.getElementById("outputTokenName").value =  "WASM"
   } 
   if(selectedValue != "ETH"){
-    document.getElementById("outputTokenName").value =  "ETH"
+    document.getElementById("outputTokenName").value =  "EVM"
   }
 });
 
@@ -266,11 +266,11 @@ swapButtonClickEvent.addEventListener('click', () => {
   console.log(inputTokenName)
 
   if(inputTokenName == "ETH"){
-    console.log("Swap ETH for LINK.")
+    console.log("Swap ETH for WASM.")
     swapEthForTokenTxAsync()
   }
-  if(inputTokenName == "LINK"){
-    console.log("Swap LINK for ETH.")
+  if(inputTokenName == "WASM"){
+    console.log("Swap WASM for ETH.")
     swapTokenForEthTxAsync()
   }
   

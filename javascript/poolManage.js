@@ -6,7 +6,7 @@ detectMetamaskInstalled() //When the page is opened check for error handling iss
 let accounts = []; ////Empty array to be filled once Metamask is called.
 document.getElementById("enableEthereumButton").innerHTML =  "Connect Metamask 🦊"
 document.getElementById("getPoolBalanceWETH").innerHTML =  "Loading..."
-document.getElementById("getPoolBalanceLINK").innerHTML =  "Loading..."
+document.getElementById("getPoolBalanceWASM").innerHTML =  "Loading..."
 
 const baseSepoliaChainId = 20994;
 
@@ -21,13 +21,13 @@ const contractABI_JS = [{"inputs":[{"internalType":"address","name":"token","typ
 const contractDefined_JS = new ethers.Contract(contractAddress_JS, contractABI_JS, provider);
 
 const wethAddress = '0x3d38E57b5d23c3881AffB8BC0978d5E0bd96c1C6'
-const linkAddress = '0x9030e7aa523b19D6A9d2327d45d3A3287b3EfAE1'
+const wasmAddress = '0x9030e7aa523b19D6A9d2327d45d3A3287b3EfAE1'
 const ierc20Abi = [{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
 
 const wethContractInstance = new ethers.Contract(wethAddress, ierc20Abi, provider);
-const linkContractInstance = new ethers.Contract(linkAddress, ierc20Abi, provider);
+const wasmContractInstance = new ethers.Contract(wasmAddress, ierc20Abi, provider);
 
-const poolPairAddressLinkWeth = "0xEDE6e663eD942dbE106654DEC175671796f1959B";
+const poolPairAddressWasmWeth = "0xEDE6e663eD942dbE106654DEC175671796f1959B";
 
 getDataOnChainToLoad()
 
@@ -39,25 +39,25 @@ async function getDataOnChainToLoad(){
   }
   if(chainIdConnected != baseSepoliaChainId){
     document.getElementById("getPoolBalanceWETH").innerHTML =  "Install Metamask and select Base Sepolia Testnet to have a Web3 provider to read blockchain data."
-    document.getElementById("getPoolBalanceLINK").innerHTML =  "Install Metamask and select Base Sepolia Testnet to have a Web3 provider to read blockchain data."
+    document.getElementById("getPoolBalanceWASM").innerHTML =  "Install Metamask and select Base Sepolia Testnet to have a Web3 provider to read blockchain data."
   }
 
 }
 
 async function getStoredData() {
-  let getPoolBalanceWethValue = await wethContractInstance.balanceOf(poolPairAddressLinkWeth)
+  let getPoolBalanceWethValue = await wethContractInstance.balanceOf(poolPairAddressWasmWeth)
   if(getPoolBalanceWethValue === undefined){
     document.getElementById("getPoolBalanceWETH").innerHTML =  "Install Metamask and select Sepolia Testnet to have a Web3 provider to read blockchain data."
   }
   else{
     document.getElementById("getPoolBalanceWETH").innerHTML =  getPoolBalanceWethValue + " WETH"
   }
-  let getPoolBalanceLinkValue = await await linkContractInstance.balanceOf(poolPairAddressLinkWeth)
-  if(getPoolBalanceLinkValue === undefined){
-    document.getElementById("getPoolBalanceLINK").innerHTML =  "Install Metamask and select Sepolia Testnet to have a Web3 provider to read blockchain data."
+  let getPoolBalanceWasmValue = await await wasmContractInstance.balanceOf(poolPairAddressWasmWeth)
+  if(getPoolBalanceWasmValue === undefined){
+    document.getElementById("getPoolBalanceWASM").innerHTML =  "Install Metamask and select Sepolia Testnet to have a Web3 provider to read blockchain data."
   }
   else{
-    document.getElementById("getPoolBalanceLINK").innerHTML =  getPoolBalanceLinkValue + " LINK"
+    document.getElementById("getPoolBalanceWASM").innerHTML =  getPoolBalanceWasmValue + " WASM"
   }
 }
 
@@ -68,7 +68,7 @@ async function addLiquidityTxAsync() {
   console.log(inputValueTest)
   console.log(inputValueDouble)
 
-  let tokenERC20Address = linkAddress;
+  let tokenERC20Address = wasmAddress;
   const deadline = BigInt("115792089237316195423570985008687907853269984665640564039457584007913129639935");
 
   const callDataObject = await contractDefined_JS.populateTransaction.addLiquidityETH(
@@ -105,7 +105,7 @@ async function removeLiquidityTxAsync() {
   console.log(inputValueTest)
   console.log(inputValueDouble)
 
-  let tokenERC20Address = linkAddress;
+  let tokenERC20Address = wasmAddress;
   const deadline = BigInt("115792089237316195423570985008687907853269984665640564039457584007913129639935");
 
   // Note:
