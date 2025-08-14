@@ -2,7 +2,7 @@
 
 ## Overview
 
-Simple vanilla Javascript frontend for Uniswap V2 swaps and pool interactions on testnet Base Sepolia.
+Simple vanilla Javascript frontend for Uniswap V2 swaps and pool interactions on testnet Fluent Testnet.
 
 ## GitHub Pages Hosted Link
 
